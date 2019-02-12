@@ -8,7 +8,10 @@ set -e
 
 SSH_PATH="$HOME/.ssh"
 
+if [[ ! -d "$SSH_PATH" ]]; then
 mkdir "$SSH_PATH"
+fi
+
 touch "$SSH_PATH/known_hosts"
 
 echo "$SSH_PRIVATE_KEY" > "$SSH_PATH/deploy_key"
